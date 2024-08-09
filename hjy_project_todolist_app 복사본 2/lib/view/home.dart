@@ -18,7 +18,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
   //porperty
   late TabController controllertTabBar;
   ThemeMode mode_themeMode = ThemeMode.system;      //모드
-  late List<TodoList> todoList;  //**추가
+  late List<TodoList> p1Connect;  //**추가
 
   mode_changeThemeMode(ThemeMode themeMode){       //함수생성
     mode_themeMode = themeMode;
@@ -28,8 +28,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
   void initState() {
     super.initState();
     controllertTabBar = TabController(length: 3, vsync: this); //tapbar 3개
-    todoList=[];
-    todoList.add(TodoList(imageName: ' ', listContent: ' '));
+    p1Connect=[];
+    p1Connect.add(TodoList(imageName: ' ', listContent: ' '));
     
   }
 
@@ -86,7 +86,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
       body: TabBarView(
         controller: controllertTabBar,
         children: [  //todolistR: todoList, 
-              FirstPage(onchageTheme: mode_changeThemeMode),
+              FirstPage(todolistP1: p1Connect, onchageTheme: mode_changeThemeMode),
               SecondPage(onchageTheme: mode_changeThemeMode),
               ThirdPage(onchageTheme: mode_changeThemeMode),
         ],

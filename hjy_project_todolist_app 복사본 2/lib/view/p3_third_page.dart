@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../model/exbmi.dart';
 
-import 'package:intl/intl.dart';
+// import 'package:intl/intl.dart';
 
 class ThirdPage extends StatefulWidget {
   final Function(ThemeMode) onchageTheme; //onchangeTheme 테마모드 갖고오기 설정!!!
@@ -37,8 +37,8 @@ class _ThirdPageState extends State<ThirdPage> {
   }
 
   @override
-  final now = new DateTime.now();
-  String formattedDate = DateFormat('yy.MM.dd').format(DateTime.now());
+  // final now = new DateTime.now();
+  // String formattedDate = DateFormat('yy.MM.dd').format(DateTime.now());
 
   @override
   Widget build(BuildContext context) {
@@ -162,6 +162,7 @@ class _ThirdPageState extends State<ThirdPage> {
                   )
                 ],
               ),
+
               Divider(
                 height: 50,
                 thickness: 1.5,
@@ -190,8 +191,9 @@ class _ThirdPageState extends State<ThirdPage> {
       errorSnackBar();
     } else {
       result = exbmi.getResult();
+      //[$formattedDate] 
       resultStr =
-          ' [$formattedDate] ${num2Controller.text}kg(${result.$1}bmi), 혈당${num3Controller.text}, 혈압 ${num4Controller.text} \n                        ${num5Controller.text}, ${num6Controller.text}, ${num7Controller.text}';
+          '     ${num2Controller.text}kg(${result.$1}), 혈당${num3Controller.text}, 혈압 ${num4Controller.text} \n ';
     }
     setState(() {});
   }
